@@ -7,6 +7,10 @@
 #include <SDL_syswm.h>
 #endif
 
+#ifdef LINUX
+#include <cstring>
+#endif
+
 SDLWindow::SDLWindow(Application* application, int width, int height, int flags, const char* title) {
     sdlRenderer = 0;
 	sdlTexture = 0;
