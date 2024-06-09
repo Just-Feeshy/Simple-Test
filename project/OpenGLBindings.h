@@ -13,10 +13,17 @@ int gl_create_vertex_array() {
 	glGenVertexArrays(1, &vao);
     #else
 	glGenVertexArraysOES(1, &vao);
-	glBindVertexArrayOES(vao);
     #endif
 
     return vao;
+}
+
+void gl_bind_vertex_array(int vao) {
+    #ifndef GLES3_API
+	glBindVertexArray(vao);
+    #else
+	glBindVertexArraysOES(vao);
+    #endif
 }
 
 int gl_create_buffer() {
@@ -72,4 +79,21 @@ void gl_vertex_attrib_pointer(int index, int size, int type, bool normalized, in
 
 int gl_get_attrib_location(int program, std::string name) {
     return glGetAttribLocation(program, name.c_str());
+}
+
+void gl_get_shader_info_log(int handle) {
+    GLuint shader = handle;
+
+	GLint logLength = 0;
+	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &logLength);
+
+	if(logLength == 0) {
+		return;
+	}
+
+	std::string buffer(logLength, 0);
+	GLint written = 0;
+	glGetShaderInfoLog(shader, logLength, 0, &buffer[0]);
+
+	printf("Shader Info Log: %s\n", buffer.c_str());
 }

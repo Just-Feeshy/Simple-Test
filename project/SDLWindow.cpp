@@ -203,7 +203,7 @@ void SDLWindow::Close() {
 }
 
 void SDLWindow::ContextFlip() {
-    if(context) {
+    if(context && !sdlRenderer) {
 	    SDL_GL_SwapWindow(sdlWindow);
 	}else if(sdlRenderer) {
 	    SDL_RenderPresent(sdlRenderer);
