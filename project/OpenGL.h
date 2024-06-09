@@ -65,6 +65,7 @@
 #include <windows.h>
 #ifndef NATIVE_TOOLKIT_SDL_ANGLE
 #include <gl/GL.h>
+#include <GL/glext.h>
 #endif
 
 typedef ptrdiff_t GLsizeiptrARB;
