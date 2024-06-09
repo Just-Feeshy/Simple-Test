@@ -1,10 +1,10 @@
 #include "SDLApplication.h"
-#include "SDLWindow.h"
 
 #ifdef EMSCRIPTEN
 #include <emscripten.h>
 #endif
 
+SDLApplication* SDLApplication::currentApplication = 0;
 
 SDLApplication::SDLApplication() {
     uint32_t initFlags = SDL_INIT_VIDEO | SDL_INIT_TIMER;

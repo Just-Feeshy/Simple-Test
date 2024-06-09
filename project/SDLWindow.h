@@ -2,11 +2,11 @@
 
 #include <SDL.h>
 
+#include "app/Application.h"
 #include "ui/Window.h"
 
 class SDLWindow : public Window {
 		public:
-
 			SDLWindow (Application* application, int width, int height, int flags, const char* title);
 			~SDLWindow ();
 
@@ -16,6 +16,8 @@ class SDLWindow : public Window {
 			SDL_Renderer* sdlRenderer;
 			SDL_Texture* sdlTexture;
 			SDL_Window* sdlWindow;
+
+			Application* currentApplication;
 
 		private:
 

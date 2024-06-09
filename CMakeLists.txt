@@ -4,6 +4,11 @@ set(CMAKE_CXX_STANDARD 17)
 project(basic)
 enable_language(CXX)
 
+# Set C++ Version
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # Setters
 SET(WINRT FALSE)
 SET(ANGLE FALSE)

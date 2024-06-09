@@ -192,6 +192,7 @@ SDLWindow::SDLWindow(Application* application, int width, int height, int flags,
 		}else {
 		    printf("Failed to create OpenGL context: %s\n", SDL_GetError());
 		}
+	}
 }
 
 void SDLWindow::Close() {

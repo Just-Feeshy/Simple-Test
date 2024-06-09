@@ -1,11 +1,9 @@
 #pragma once
 
 #include "app/Application.h"
+#include "SDLWindow.h"
 
-#include <SDL.h>
 #include <stdint.h>
-
-class SDLWindow;
 
 class SDLApplication : public Application {
     public:

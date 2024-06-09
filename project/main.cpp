@@ -1,3 +1,5 @@
+#include "SDLApplication.h"
+
 #include <stdio.h>
 
 int main() {

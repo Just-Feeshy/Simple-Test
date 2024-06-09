@@ -1,16 +1,11 @@
 #pragma once
 
-#include "../app/Application.h"
 #include <stdint.h>
 
 class Window {
-
-
 public:
-
 	virtual ~Window () {};
 
-	Application* currentApplication;
 	int flags;
 
 	virtual void Close () = 0;
