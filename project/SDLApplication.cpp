@@ -1,5 +1,7 @@
 #include "SDLApplication.h"
 
+#include <stdio.h>
+
 #ifdef EMSCRIPTEN
 #include <emscripten.h>
 #endif
