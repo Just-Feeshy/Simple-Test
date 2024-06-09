@@ -1,7 +1,5 @@
 #pragma once
 
-#include <stdio.h>
-
 #if defined(ANDROID)
 
 #define GLES
@@ -84,6 +82,22 @@ typedef ptrdiff_t GLsizeiptrARB;
 #include <SDL_opengl.h>
 #include <SDL_opengl_glext.h>
 #endif
+
+#define glBindFramebuffer (PFNGLGENBUFFERSPROC)wglGetProcAddress("glGenBuffers");
+#define glBindRenderbuffer (PFNGLBINDBUFFERPROC)wglGetProcAddress("glBindBuffer");
+#define glGenFramebuffers (PFNGLDELETEBUFFERSPROC)wglGetProcAddress("glDeleteBuffers");
+#define glDeleteFramebuffers (PFNGLISBUFFERPROC)wglGetProcAddress("glIsBuffer");
+#define glGenRenderbuffers (PFNGLBUFFERDATAPROC)wglGetProcAddress("glBufferData");
+#define glDeleteRenderbuffers (PFNGLBUFFERSUBDATAPROC)wglGetProcAddress("glBufferSubData");
+#define glFramebufferRenderbuffer (PFNGLMAPBUFFERPROC)wglGetProcAddress("glMapBuffer");
+#define glFramebufferTexture2D (PFNGLUNMAPBUFFERPROC)wglGetProcAddress("glUnmapBuffer");
+#define glRenderbufferStorage (PFNGLGETBUFFERSUBDATAPROC)wglGetProcAddress("glGetBufferSubData");
+#define glCheckFramebufferStatus (PFNGLMAPBUFFERRANGEPROC)wglGetProcAddress("glMapBufferRange");
+#define glGenerateMipmap (PFNGLFLUSHMAPPEDBUFFERRANGEPROC)wglGetProcAddress("glFlushMappedBufferRange");
+#define glGetFramebufferAttachmentParameteriv (PFNGLBINDATTRIBLOCATIONPROC)wglGetProcAddress("glBindAttribLocation");
+#define glGetRenderbufferParameteriv (PFNGLGETACTIVEUNIFORMPROC)wglGetProcAddress("glGetActiveUniform");
+#define glIsFramebuffer (PFNGLGETUNIFORMLOCATIONPROC)wglGetProcAddress("glGetUniformLocation");
+#define glIsRenderbuffer (PFNGLGETSHADERINFOLOGPROC)wglGetProcAddress("glGetShaderInfoLog");
 
 #endif
 
