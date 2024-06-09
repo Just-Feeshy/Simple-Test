@@ -5,7 +5,7 @@
 #include "ui/Window.h"
 
 class SDLWindow : public Window {
-public:
+		public:
 
 			SDLWindow (Application* application, int width, int height, int flags, const char* title);
 			~SDLWindow ();
