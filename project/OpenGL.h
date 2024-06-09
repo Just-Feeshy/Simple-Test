@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdio.h>
+
 #if defined(ANDROID)
 
 #define GLES
