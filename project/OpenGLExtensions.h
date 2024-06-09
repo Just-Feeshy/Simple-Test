@@ -1,0 +1,10 @@
+#ifndef GL_UNSIGNED_SHORT_4_4_4_4
+#define GL_UNSIGNED_SHORT_4_4_4_4 0x8033
+#define GL_UNSIGNED_SHORT_5_6_5 0x8363
+#endif
+
+#define CALLING_CONVENTION APIENTRY
+
+#ifdef NATIVE_TOOLKIT_SDL_ANGLE
+#include <SDL_egl.h>
+#endif

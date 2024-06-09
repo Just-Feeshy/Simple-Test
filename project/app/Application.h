@@ -11,6 +11,4 @@ public:
 	virtual int Quit () = 0;
 	virtual void SetFrameRate (double frameRate) = 0;
 	virtual bool Update () = 0;
-
-
 };
