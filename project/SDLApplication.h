@@ -2,6 +2,7 @@
 
 #include "app/Application.h"
 #include "SDLWindow.h"
+#include "RenderEvent.h"
 
 #include <stdint.h>
 
@@ -27,6 +28,8 @@ class SDLApplication : public Application {
 		uint32_t lastUpdate;
 		uint32_t nextUpdate;
 		double framePeriod;
+
+		RenderEvent renderEvent;
 
 		void HandleEvent (SDL_Event* event);
 

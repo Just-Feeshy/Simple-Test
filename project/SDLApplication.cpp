@@ -53,6 +53,7 @@ int SDLApplication::Exec() {
 static SDL_TimerID timerID = 0;
 bool timerActive = false;
 bool firstTime = true;
+bool inBackground = false;
 
 uint32_t OnTimer(uint32_t interval, void*) {
     SDL_Event event;
@@ -124,6 +125,20 @@ void SDLApplication::UpdateFrame(void*) {
 
 void SDLApplication::HandleEvent(SDL_Event* event) {
     switch(event->type) {
+		case SDL_USEREVENT:
+		    if(!inBackground) {
+				currentUpdate = SDL_GetTicks();
+				lastUpdate = currentUpdate;
+				nextUpdate = framePeriod;
+
+				while(nextUpdate <= currentUpdate) {
+					nextUpdate += framePeriod;
+				}
+
+				RenderEvent::Dispatch(&renderEvent);
+		    }
+
+		    break;
 		case SDL_WINDOWEVENT: // TODO: Implement this
 		    break;
 		case SDL_QUIT:

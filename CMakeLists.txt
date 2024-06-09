@@ -44,7 +44,7 @@ if(MSVC)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
 endif()
 
-file(GLOB_RECURSE SOURCES "project/*.cpp")
+file(GLOB SOURCES "src/RenderEvent.cpp" "project/*.cpp")
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 
 target_link_libraries(${CMAKE_PROJECT_NAME} SDL2-static OpenGL::GL)
