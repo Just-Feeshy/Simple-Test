@@ -9,6 +9,12 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Set Compiler Flags
+if(MSVC)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Debug>:Debug>")
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
+endif()
+
 # Setters
 SET(WINRT FALSE)
 SET(ANGLE FALSE)
@@ -37,11 +43,6 @@ endif()
 
 if(ANGLE)
     add_compile_definitions(NATIVE_TOOLKIT_SDL_ANGLE)
-endif()
-
-if(MSVC)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug$<$<CONFIG:Debug>:Debug>")
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
 endif()
 
 file(GLOB SOURCES "src/RenderEvent.cpp" "project/*.cpp")
