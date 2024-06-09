@@ -15,6 +15,7 @@ SDLApplication::SDLApplication() {
 
 	if (SDL_Init(initFlags) != 0) {
 		printf("SDL_Init failed: %s\n", SDL_GetError());
+		return;
 	}
 
 	SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
@@ -150,4 +151,7 @@ void SDLApplication::RegisterWindow(SDLWindow* window) {
 
 void SDLApplication::SetFrameRate(double frameRate) {
     framePeriod = 1000.0 / frameRate;
+}
+
+SDLApplication::~SDLApplication() {
 }
