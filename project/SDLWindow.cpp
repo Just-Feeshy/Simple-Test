@@ -10,6 +10,7 @@
 
 #elif defined(LINUX)
 
+#include <cstdio>
 #include <cstring>
 
 #endif
@@ -159,7 +160,7 @@ SDLWindow::SDLWindow(Application* application, int width, int height, int flags,
 					SDL_GL_SetSwapInterval(0);
 				}
 
-				// TODO: OpenGL Initialization goes here
+				InitOpenGLExtensions();
 
 				#ifndef GLES
 				int version = 0;

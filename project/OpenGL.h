@@ -83,25 +83,23 @@ typedef ptrdiff_t GLsizeiptrARB;
 #include <SDL_opengl_glext.h>
 #endif
 
-#define glBindBuffer glBindBufferEXT
-#define glGenBuffers glGenBuffersEXT
-#define glBufferData glBufferDataEXT
-#define glAttachShader glAttachShaderEXT
-#define glCompileShader glCompileShaderEXT
-#define glCreateProgram glCreateProgramEXT
-#define glCreateShader glCreateShaderEXT
-#define glEnableVertexAttribArray glEnableVertexAttribArrayEXT
-#define glGetAttribLocation glGetAttribLocationEXT
-#define glGetShaderiv glGetShaderivEXT
-#define glGetShaderInfoLog glGetShaderInfoLogEXT
-#define glLinkProgram glLinkProgramEXT
-#define glShaderSource glShaderSourceEXT
-#define glUseProgram glUseProgramEXT
-#define glVertexAttribPointer glVertexAttribPointerEXT
-#define glBindVertexArray glBindVertexArrayEXT
-#define glGenVertexArrays glGenVertexArraysEXT
-#define glIsFramebuffer glIsFramebufferEXT
-#define glIsRenderbuffer glIsRenderbufferEXT
+extern PFNGLGENBUFFERSPROC glGenBuffers;
+extern PFNGLBINDBUFFERPROC glBindBuffer;
+extern PFNGLBUFFERDATAPROC glBufferData;
+extern PFNGLATTACHSHADERPROC glAttachShader;
+extern PFNGLCOMPILESHADERPROC glCompileShader;
+extern PFNGLCREATEPROGRAMPROC glCreateProgram;
+extern PFNGLCREATESHADERPROC glCreateShader;
+extern PFNGLENABLEVERTEXATTRIBARRAYPROC glEnableVertexAttribArray;
+extern PFNGLGETATTRIBLOCATIONPROC glGetAttribLocation;
+extern PFNGLGETSHADERIVPROC glGetShaderiv;
+extern PFNGLGETSHADERINFOLOGPROC glGetShaderInfoLog;
+extern PFNGLLINKPROGRAMPROC glLinkProgram;
+extern PFNGLSHADERSOURCEPROC glShaderSource;
+extern PFNGLUSEPROGRAMPROC glUseProgram;
+extern PFNGLVERTEXATTRIBPOINTERPROC glVertexAttribPointer;
+extern PFNGLBINDVERTEXARRAYPROC glBindVertexArray;
+extern PFNGLGENVERTEXARRAYSPROC glGenVertexArrays;
 
 #endif
 
@@ -182,3 +180,5 @@ typedef void* WinGLContext;
 #define CHECK_EXT (x) 1
 
 #endif
+
+extern void InitOpenGLExtensions();
