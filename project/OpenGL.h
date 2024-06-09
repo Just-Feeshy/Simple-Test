@@ -65,7 +65,6 @@
 #include <windows.h>
 #ifndef NATIVE_TOOLKIT_SDL_ANGLE
 #include <gl/GL.h>
-#include <GL/glext.h>
 #endif
 
 typedef ptrdiff_t GLsizeiptrARB;
@@ -83,39 +82,6 @@ typedef ptrdiff_t GLsizeiptrARB;
 #include <SDL_opengl.h>
 #include <SDL_opengl_glext.h>
 #endif
-
-extern PFNGLBINDFRAMEBUFFEREXTPROC glBindFramebufferEXT;
-extern PFNGLBINDRENDERBUFFEREXTPROC glBindRenderbufferEXT;
-extern PFNGLGENFRAMEBUFFERSEXTPROC glGenFramebuffersEXT;
-extern PFNGLDELETEFRAMEBUFFERSEXTPROC glDeleteFramebuffersEXT;
-extern PFNGLGENRENDERBUFFERSEXTPROC glGenRenderbuffersEXT;
-extern PFNGLDELETERENDERBUFFERSEXTPROC glDeleteRenderbuffersEXT;
-extern PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC glFramebufferRenderbufferEXT;
-extern PFNGLFRAMEBUFFERTEXTURE2DEXTPROC glFramebufferTexture2DEXT;
-extern PFNGLRENDERBUFFERSTORAGEEXTPROC glRenderbufferStorageEXT;
-extern PFNGLCHECKFRAMEBUFFERSTATUSEXTPROC glCheckFramebufferStatusEXT;
-extern PFNGLGENERATEMIPMAPEXTPROC glGenerateMipmapEXT;
-extern PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC glGetFramebufferAttachmentParameterivEXT;
-extern PFNGLGETRENDERBUFFERPARAMETERIVEXTPROC glGetRenderbufferParameterivEXT;
-extern PFNGLISFRAMEBUFFEREXTPROC glIsFramebufferEXT;
-extern PFNGLISRENDERBUFFEREXTPROC glIsRenderbufferEXT;
-
-#define glBindFramebuffer glBindFramebufferEXT
-#define glBindRenderbuffer glBindRenderbufferEXT
-#define glGenFramebuffers glGenFramebuffersEXT
-#define glDeleteFramebuffers glDeleteFramebuffersEXT
-#define glGenRenderbuffers glGenRenderbuffersEXT
-#define glDeleteRenderbuffers glDeleteRenderbuffersEXT
-#define glFramebufferRenderbuffer glFramebufferRenderbufferEXT
-#define glFramebufferTexture2D glFramebufferTexture2DEXT
-#define glRenderbufferStorage glRenderbufferStorageEXT
-#define glCheckFramebufferStatus glCheckFramebufferStatusEXT
-#define glCheckFramebufferStatus glCheckFramebufferStatusEXT
-#define glGenerateMipmap glGenerateMipmapEXT
-#define glGetFramebufferAttachmentParameteriv glGetFramebufferAttachmentParameterivEXT
-#define glGetRenderbufferParameteriv glGetRenderbufferParameterivEXT
-#define glIsFramebuffer glIsFramebufferEXT
-#define glIsRenderbuffer glIsRenderbufferEXT
 
 #endif
 
