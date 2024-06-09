@@ -8,22 +8,12 @@
 
 int gl_create_vertex_array() {
     GLuint vao = 0;
-
-    #ifndef GLES3_API
 	glGenVertexArrays(1, &vao);
-    #else
-	glGenVertexArraysOES(1, &vao);
-    #endif
-
     return vao;
 }
 
 void gl_bind_vertex_array(int vao) {
-    #ifndef GLES3_API
 	glBindVertexArray(vao);
-    #else
-	glBindVertexArraysOES(vao);
-    #endif
 }
 
 int gl_create_buffer() {
